@@ -4,7 +4,13 @@ import WelcomeScreen from '../../screens/AuthScreen/WelcomeScreen';
 import LoginScreen from '../../screens/AuthScreen/LoginScreen';
 import SignUpScreen from '../../screens/AuthScreen/SignUpScreen';
 
-const AuthStack = createStackNavigator();
+export type AuthParamProps = {
+  welcome: undefined;
+  login: undefined;
+  signUp: undefined;
+};
+
+const AuthStack = createStackNavigator<AuthParamProps>();
 
 const AuthNavigator = () => {
   return (

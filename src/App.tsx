@@ -7,13 +7,13 @@ import {StatusBar, Text} from 'react-native';
 import styled from '@emotion/native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import {Button} from 'react-native-elements';
-import AppNavigator from './routes';
+import Navigator from './routes';
 
 const App = () => {
   return (
     <SafeAreaProvider>
       <StatusBar backgroundColor="white" barStyle="dark-content" />
-      <AppNavigator />
+      <Navigator />
     </SafeAreaProvider>
   );
 };
