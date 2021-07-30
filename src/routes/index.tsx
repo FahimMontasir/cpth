@@ -8,7 +8,7 @@ const Navigator = () => {
 
   return (
     <NavigationContainer>
-      <AppNavigator />
+      <AuthNavigator />
     </NavigationContainer>
   );
 };
