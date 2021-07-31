@@ -1,11 +1,13 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+
+import {Container} from '../../common';
+import {Typography} from '../../common/Typography';
 
 const LoginScreen = () => {
   return (
-    <View>
-      <Text>LoginScreen</Text>
-    </View>
+    <Container>
+      <Typography caption>Anisur Rahman</Typography>
+    </Container>
   );
 };
 export default LoginScreen;

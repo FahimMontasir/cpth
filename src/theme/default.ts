@@ -11,6 +11,11 @@ export const defaultTheme: DefaultTheme = {
     white: '#F9FAFB',
     background: '#ECFDF5',
   },
+  typography: {
+    heading: '#DB2777',
+    body: '#1F2937',
+    caption: '#374151',
+  },
   spacing: {
     xs: '1%',
     sm: '2.50%',

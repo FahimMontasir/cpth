@@ -1,9 +1,9 @@
 import React from 'react';
-import {Button} from 'react-native-elements';
-import {StackNavigationProp} from '@react-navigation/stack';
-import {AuthParamProps} from '../../routes/authNavigator';
 import styled from 'styled-components/native';
-import Container from '../../common/Container';
+import {StackNavigationProp} from '@react-navigation/stack';
+
+import {AuthParamProps} from '../../routes/authNavigator';
+import {Button, Container, ImageBackground, RowContainer} from '../../common';
 
 type NavigationProp = StackNavigationProp<AuthParamProps, 'welcome'>;
 type Props = {
@@ -12,52 +12,33 @@ type Props = {
 
 const WelcomeScreen = ({navigation}: Props) => {
   return (
-    <Container>
-      <AContainer>
-        <Btn title="guest" />
+    <Container color="#0082D2" light>
+      <ImageBackground source={require('../../assets/welcome.jpg')}>
         <ButtonContainer>
-          <Btn
-            width={'40%'}
-            raised
-            title="login"
-            onPress={() => navigation.navigate('login')}
-          />
-          <Btn
-            width={'40%'}
-            title="signUp"
-            onPress={() => navigation.navigate('signUp')}
-          />
+          <Button title="Guest Sign In" />
+          <RowContainer marginVertical="1%">
+            <Button
+              width={'40%'}
+              title="Sign In"
+              onPress={() => navigation.navigate('login')}
+            />
+            <Button
+              width={'40%'}
+              title="Sign Up"
+              onPress={() => navigation.navigate('signUp')}
+            />
+          </RowContainer>
         </ButtonContainer>
-      </AContainer>
+      </ImageBackground>
     </Container>
   );
 };
 export default WelcomeScreen;
 
-interface IProps {
-  width?: string;
-}
-
-const Btn = styled(Button).attrs<IProps>(props => ({
-  containerStyle: {
-    width: props.width || '95%',
-    margin: props.theme.spacing.sm,
-  },
-  buttonStyle: {
-    backgroundColor: 'white',
-  },
-  titleStyle: {
-    color: 'black',
-    fontFamily: 'sans-serif-small',
-  },
-  raised: true,
-}))<IProps>``;
 const ButtonContainer = styled.View`
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 5px;
-`;
+  position: absolute;
+  top: 75%;
 
-const AContainer = styled.View`
-  top: 80%;
+  width: 100%;
+  height: 100%;
 `;

@@ -12,6 +12,11 @@ declare module 'styled-components' {
       white: string;
       background: string;
     };
+    typography: {
+      heading: string;
+      body: string;
+      caption: string;
+    };
     spacing: {
       xs: string;
       sm: string;

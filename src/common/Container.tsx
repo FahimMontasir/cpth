@@ -4,28 +4,29 @@ import styled from 'styled-components/native';
 interface IProps {
   children: JSX.Element;
   color?: string;
+  light?: boolean;
 }
 
-const Container = ({children, color}: IProps) => {
+export const Container = ({children, color, light}: IProps) => {
   return (
     <SafeArea>
-      <CustomStatusBar color={color} />
+      <CustomStatusBar color={color} light={light} />
       {children}
     </SafeArea>
   );
 };
-export default Container;
 
 type StyledProps = {
   color?: string;
+  light?: boolean;
 };
 
 const CustomStatusBar = styled.StatusBar.attrs<StyledProps>(props => ({
-  backgroundColor: props.color ? props.color : props.theme.colors.primary,
-  barStyle: 'dark-content',
+  backgroundColor: props.color ? props.color : props.theme.colors.background,
+  barStyle: props.light ? 'light-content' : 'dark-content',
 }))<StyledProps>``;
 
 const SafeArea = styled.SafeAreaView`
   flex-grow: 1;
-  background-color: red;
+  background-color: ${p => p.theme.colors.background};
 `;
