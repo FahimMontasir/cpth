@@ -1,9 +1,9 @@
 import React from 'react';
-import {View} from 'react-native';
 import {Button} from 'react-native-elements';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {AuthParamProps} from '../../routes/authNavigator';
 import styled from 'styled-components/native';
+import Container from '../../common/Container';
 
 type NavigationProp = StackNavigationProp<AuthParamProps, 'welcome'>;
 type Props = {
@@ -12,8 +12,8 @@ type Props = {
 
 const WelcomeScreen = ({navigation}: Props) => {
   return (
-    <View style={{flex: 1}}>
-      <Container>
+    <Container>
+      <AContainer>
         <Btn title="guest" />
         <ButtonContainer>
           <Btn
@@ -28,8 +28,8 @@ const WelcomeScreen = ({navigation}: Props) => {
             onPress={() => navigation.navigate('signUp')}
           />
         </ButtonContainer>
-      </Container>
-    </View>
+      </AContainer>
+    </Container>
   );
 };
 export default WelcomeScreen;
@@ -44,7 +44,11 @@ const Btn = styled(Button).attrs<IProps>(props => ({
     margin: props.theme.spacing.sm,
   },
   buttonStyle: {
-    backgroundColor: props.theme.colors.primary,
+    backgroundColor: 'white',
+  },
+  titleStyle: {
+    color: 'black',
+    fontFamily: 'sans-serif-small',
   },
   raised: true,
 }))<IProps>``;
@@ -54,6 +58,6 @@ const ButtonContainer = styled.View`
   margin-top: 5px;
 `;
 
-const Container = styled.View`
+const AContainer = styled.View`
   top: 80%;
 `;
