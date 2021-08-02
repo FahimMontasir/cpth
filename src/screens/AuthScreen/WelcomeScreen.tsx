@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 
 import {AuthParamProps} from '../../routes/authNavigator';
-import {Button, Container, ImageBackground, RowContainer} from '../../common';
+import {Button, Container, ImageBackground, SubContainer} from '../../common';
 
 type NavigationProp = StackNavigationProp<AuthParamProps, 'welcome'>;
 type Props = {
@@ -16,7 +16,7 @@ const WelcomeScreen = ({navigation}: Props) => {
       <ImageBackground source={require('../../assets/welcome.jpg')}>
         <ButtonContainer>
           <Button title="Guest Sign In" />
-          <RowContainer marginVertical="1%">
+          <SubContainer marginV="1%" row>
             <Button
               width={'40%'}
               title="Sign In"
@@ -27,7 +27,7 @@ const WelcomeScreen = ({navigation}: Props) => {
               title="Sign Up"
               onPress={() => navigation.navigate('signUp')}
             />
-          </RowContainer>
+          </SubContainer>
         </ButtonContainer>
       </ImageBackground>
     </Container>
@@ -38,7 +38,6 @@ export default WelcomeScreen;
 const ButtonContainer = styled.View`
   position: absolute;
   top: 75%;
-
   width: 100%;
   height: 100%;
 `;

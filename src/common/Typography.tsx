@@ -4,21 +4,39 @@ interface IProps {
   heading?: boolean;
   body?: boolean;
   caption?: boolean;
+  gutterV?: string;
+  gutterH?: string;
 }
 
 export const Typography = styled.Text<IProps>`
+  ${p =>
+    p.gutterV &&
+    css`
+      margin-top: ${p.gutterV};
+      margin-bottom: ${p.gutterV};
+    `}
+
+  ${p =>
+    p.gutterH &&
+    css`
+      margin-right: ${p.gutterH};
+      margin-left: ${p.gutterH};
+    `}
+
   ${p =>
     p.heading &&
     css`
       font-size: 30px;
       color: ${({theme}) => theme.typography.heading};
     `}
+
   ${p =>
     p.body &&
     css`
       font-size: 20px;
       color: ${({theme}) => theme.typography.body};
     `}
+    
   ${p =>
     p.caption &&
     css`
