@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components/native';
 
 interface IProps {
-  children: JSX.Element;
+  children: React.ReactNode;
   color?: string;
   light?: boolean;
   justify?: string;

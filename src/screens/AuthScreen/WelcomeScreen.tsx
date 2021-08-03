@@ -1,13 +1,11 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import {StackNavigationProp} from '@react-navigation/stack';
 
-import {AuthParamProps} from '../../routes/authNavigator';
 import {Button, Container, ImageBackground, SubContainer} from '../../common';
+import {WelcomeNavigationProp} from '../../helper/navigationTypes';
 
-type NavigationProp = StackNavigationProp<AuthParamProps, 'welcome'>;
 type Props = {
-  navigation: NavigationProp;
+  navigation: WelcomeNavigationProp;
 };
 
 const WelcomeScreen = ({navigation}: Props) => {
@@ -15,7 +13,10 @@ const WelcomeScreen = ({navigation}: Props) => {
     <Container color="#0082D2" light>
       <ImageBackground source={require('../../assets/welcome.jpg')}>
         <ButtonContainer>
-          <Button title="Guest Sign In" />
+          <Button
+            title="Guest Sign In"
+            onPress={() => navigation.navigate('root')}
+          />
           <SubContainer marginV="1%" row>
             <Button
               width={'40%'}

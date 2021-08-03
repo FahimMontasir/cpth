@@ -1,16 +1,26 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import HomeNavigator from '../homeNavigator';
-import CourseNavigator from '../courseNavigator';
-import ContestNavigator from '../contestNavigator';
-import BlogNavigator from '../blogNavigator';
-import ProfileNavigator from '../profileNavigator';
+import {NavigatorScreenParams} from '@react-navigation/native';
 
-const AppBottomTab = createBottomTabNavigator();
+import HomeNavigator, {HomeParamProps} from '../homeNavigator';
+import CourseNavigator, {CourseParamProps} from '../courseNavigator';
+import ContestNavigator, {ContestParamProps} from '../contestNavigator';
+import BlogNavigator, {BlogParamProps} from '../blogNavigator';
+import ProfileNavigator, {ProfileParamProps} from '../profileNavigator';
+
+export type AppTabParamProps = {
+  course: NavigatorScreenParams<CourseParamProps>;
+  contest: NavigatorScreenParams<ContestParamProps>;
+  home: NavigatorScreenParams<HomeParamProps>;
+  blog: NavigatorScreenParams<BlogParamProps>;
+  profile: NavigatorScreenParams<ProfileParamProps>;
+};
+
+const AppBottomTab = createBottomTabNavigator<AppTabParamProps>();
 
 const AppNavigator = () => {
   return (
-    <AppBottomTab.Navigator>
+    <AppBottomTab.Navigator initialRouteName="home">
       <AppBottomTab.Screen name="course" component={CourseNavigator} />
       <AppBottomTab.Screen name="contest" component={ContestNavigator} />
       <AppBottomTab.Screen name="home" component={HomeNavigator} />

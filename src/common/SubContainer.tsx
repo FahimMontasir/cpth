@@ -7,6 +7,9 @@ interface IProps {
   paddingV?: string;
   paddingH?: string;
   row?: boolean;
+  color?: boolean;
+  rounded?: boolean;
+  roundedTop?: boolean;
 }
 
 export const SubContainer = styled.View<IProps>`
@@ -14,6 +17,23 @@ export const SubContainer = styled.View<IProps>`
   justify-content: center;
   align-items: center;
   width: 100%;
+  ${p =>
+    p.color && {
+      backgroundColor: p.theme.colors.background,
+      elevation: '5',
+    }}
+
+  ${p =>
+    p.rounded && {
+      borderRadius: '5px',
+    }}
+
+  ${p =>
+    p.roundedTop && {
+      borderTopLeftRadius: '30px',
+      borderTopRightRadius: '30px',
+    }}
+
   ${p =>
     p.marginV && {
       marginTop: p.marginV,

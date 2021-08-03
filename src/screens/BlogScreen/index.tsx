@@ -1,11 +1,21 @@
 import React from 'react';
-import {Text, View} from 'react-native';
 
-const BlogScreen = () => {
+import {Button, Container, Typography} from '../../common';
+import {BlogNavigationProp} from '../../helper/navigationTypes';
+
+type Props = {
+  navigation: BlogNavigationProp;
+};
+
+const BlogScreen = ({navigation}: Props) => {
   return (
-    <View>
-      <Text>BlogScreen</Text>
-    </View>
+    <Container align="center">
+      <Typography heading> I'm blog screen</Typography>
+      <Button
+        title="hello"
+        onPress={() => navigation.navigate('blogDetails')}
+      />
+    </Container>
   );
 };
 export default BlogScreen;
