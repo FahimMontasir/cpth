@@ -13,6 +13,7 @@ export const defaultTheme: DefaultTheme = {
   },
   typography: {
     heading: '#DB2777',
+    subheading: '#34D399',
     body: '#1F2937',
     caption: '#374151',
   },

@@ -2,6 +2,7 @@ import styled, {css} from 'styled-components/native';
 
 interface IProps {
   heading?: boolean;
+  subheading?: boolean;
   body?: boolean;
   caption?: boolean;
   gutterV?: string;
@@ -26,8 +27,15 @@ export const Typography = styled.Text<IProps>`
   ${p =>
     p.heading &&
     css`
-      font-size: 30px;
+      font-size: 25px;
       color: ${({theme}) => theme.typography.heading};
+    `}
+  ${p =>
+    p.subheading &&
+    css`
+      font-size: 18px;
+      color: ${({theme}) => theme.typography.subheading};
+      font-weight: bold;
     `}
 
   ${p =>

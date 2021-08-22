@@ -9,12 +9,13 @@ type Props = {
 
 const BlogScreen = ({navigation}: Props) => {
   return (
-    <Container align="center">
-      <Typography heading> I'm blog screen</Typography>
-      <Button
-        title="hello"
+    <Container align="center" justify="center">
+      <Typography subheading>Coming soon!</Typography>
+      {/* <Button
+        width="40%"
+        title="Post a blog"
         onPress={() => navigation.navigate('blogDetails')}
-      />
+      /> */}
     </Container>
   );
 };

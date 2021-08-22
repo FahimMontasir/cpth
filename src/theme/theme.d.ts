@@ -14,6 +14,7 @@ declare module 'styled-components' {
     };
     typography: {
       heading: string;
+      subheading: string;
       body: string;
       caption: string;
     };

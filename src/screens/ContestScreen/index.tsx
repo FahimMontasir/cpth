@@ -1,11 +1,20 @@
 import React from 'react';
-import {View, Text} from 'react-native';
 
-const ContestScreen = () => {
+import {Container, ScrollView} from '../../common';
+import {ContestNavigationProp} from '../../helper/navigationTypes';
+import ContestsCardRow from './Components/ContestsCardRow';
+
+interface IProps {
+  navigation: ContestNavigationProp;
+}
+
+const ContestScreen = ({navigation}: IProps) => {
   return (
-    <View>
-      <Text>ContestScreen</Text>
-    </View>
+    <Container>
+      <ScrollView gutterH>
+        <ContestsCardRow navigation={navigation} />
+      </ScrollView>
+    </Container>
   );
 };
 export default ContestScreen;

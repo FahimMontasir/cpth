@@ -1,11 +1,12 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+
+import {Container, Typography} from '../../common';
 
 const CourseScreen = () => {
   return (
-    <View>
-      <Text>CourseScreen</Text>
-    </View>
+    <Container justify="center" align="center">
+      <Typography subheading>Coming Soon!</Typography>
+    </Container>
   );
 };
 export default CourseScreen;

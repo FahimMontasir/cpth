@@ -10,6 +10,7 @@ interface IProps {
   color?: boolean;
   rounded?: boolean;
   roundedTop?: boolean;
+  roundedBottom?: boolean;
 }
 
 export const SubContainer = styled.View<IProps>`
@@ -32,6 +33,11 @@ export const SubContainer = styled.View<IProps>`
     p.roundedTop && {
       borderTopLeftRadius: '30px',
       borderTopRightRadius: '30px',
+    }}
+  ${p =>
+    p.roundedBottom && {
+      borderBottomLeftRadius: '60px',
+      borderBottomRightRadius: '10px',
     }}
 
   ${p =>
